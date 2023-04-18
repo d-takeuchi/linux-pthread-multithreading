@@ -27,7 +27,6 @@ int main(void){
 
 	int varB;
 
-
 	varA = 1;
 	varB = 2;
 	printf("main-1: varA=%d, varB=%d\n", varA, varB);
