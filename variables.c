@@ -3,11 +3,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int varA;
+int varA; #ヒープ領域（多分正確には、データ領域）
 
 void *threadFunc(void *arg) {
 	int n = (int)arg;
-	int varB;
+	int varB;　#(スタック領域)
 
 	varB = 4*n;
 	printf("threadFunc -%d-1; varA=%d, varB=%d\n",n, varA, varB);
@@ -25,7 +25,7 @@ void *threadFunc(void *arg) {
 int main(void){
 	pthread_t thread1, thread2;
 
-	int varB;
+	int varB; #(スタック領域)
 
 	varA = 1;
 	varB = 2;
