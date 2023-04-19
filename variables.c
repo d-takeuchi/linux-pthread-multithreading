@@ -1,3 +1,18 @@
+//------------------------------------------------
+// --実行結果--  スレッド間で、スタック領域のデータは共有しないという例
+//main-1: varA=1, varB=2
+//threadFunc -1-1; varA=1, varB=4
+//threadFunc -1-2; varA=5, varB=4
+//main-2: varA=5, varB=3
+//threadFunc -2-1; varA=5, varB=8
+//threadFunc -2-2; varA=10, varB=8
+//threadFunc -1-3; varA=10, varB=4
+//threadFunc -1-4; varA=10, varB=6
+//threadFunc -2-3; varA=10, varB=8
+//threadFunc -2-4; varA=10, varB=12
+//main-3: varA=10, varB=3
+//------------------------------------------------
+
 #include <pthread.h>
 #include <unistd.h>
 #include <stdlib.h>
